@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" fill="none">
+  <defs>
+    <radialGradient id="bg-glow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#0F284E" stop-opacity="0.8"/>
+      <stop offset="60%" stop-color="#070C16" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#03050A" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="plate-border" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.6"/>
+      <stop offset="40%" stop-color="#38BDF8" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#1E293B" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="sf-mesh-1" x1="150" y1="150" x2="850" y2="850" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="45%" stop-color="#38BDF8"/>
+      <stop offset="85%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="sf-mesh-2" x1="850" y1="200" x2="200" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38EFFF"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <filter id="core-glow" x="-20%" y="-20%" width="140%" height="140%" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="35" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="soft-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="15" result="blur2"/>
+      <feComposite in="SourceGraphic" in2="blur2" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Solid Square Base (TikTok Developer Portal standard 1024x1024 square) -->
+  <rect width="1024" height="1024" fill="#05070D"/>
+  
+  <!-- Subtle Background Grid lines representing bulk organization -->
+  <line x1="0" y1="256" x2="1024" y2="256" stroke="#10192A" stroke-width="2" stroke-dasharray="8 12"/>
+  <line x1="0" y1="512" x2="1024" y2="512" stroke="#10192A" stroke-width="2" stroke-dasharray="8 12"/>
+  <line x1="0" y1="768" x2="1024" y2="768" stroke="#10192A" stroke-width="2" stroke-dasharray="8 12"/>
+  <line x1="256" y1="0" x2="256" y2="1024" stroke="#10192A" stroke-width="2" stroke-dasharray="8 12"/>
+  <line x1="512" y1="0" x2="512" y2="1024" stroke="#10192A" stroke-width="2" stroke-dasharray="8 12"/>
+  <line x1="768" y1="0" x2="768" y2="1024" stroke="#10192A" stroke-width="2" stroke-dasharray="8 12"/>
+
+  <!-- Glowing Icon Canvas Plate -->
+  <rect x="72" y="72" width="880" height="880" rx="220" fill="url(#bg-glow)" stroke="url(#plate-border)" stroke-width="8"/>
+  
+  <!-- Calendar / Scheduling Header Nodes -->
+  <circle cx="280" cy="220" r="18" fill="#38BDF8" fill-opacity="0.9"/>
+  <circle cx="370" cy="220" r="18" fill="#38BDF8" fill-opacity="0.9"/>
+  <circle cx="460" cy="220" r="18" fill="#38BDF8" fill-opacity="0.9"/>
+  <rect x="550" y="208" width="194" height="24" rx="12" fill="#00F0FF" fill-opacity="0.9"/>
+
+  <!-- Stylized "S" + "F" Structure -->
+  <g filter="url(#soft-glow)">
+    <!-- Main S-Curve ribbon -->
+    <path d="M 310 420 C 310 320 380 270 510 270 L 710 270 C 730 270 745 285 745 305 C 745 325 730 340 710 340 L 520 340 C 440 340 395 370 395 425 C 395 480 445 505 540 535 L 610 558 C 725 595 780 655 780 740 C 780 840 690 900 550 900 L 280 900 C 260 900 245 885 245 865 C 245 845 260 830 280 830 L 550 830 C 640 830 695 795 695 735 C 695 680 645 645 560 615 L 490 592 C 375 555 310 495 310 420 Z" fill="url(#sf-mesh-1)"/>
+    
+    <!-- F crossbars -->
+    <path d="M 560 380 L 730 380 C 746 380 758 392 758 408 C 758 424 746 436 730 436 L 560 436 Z" fill="url(#sf-mesh-2)"/>
+    <path d="M 530 490 L 680 490 C 695 490 706 501 706 515 C 706 529 695 540 680 540 L 530 540 Z" fill="#38BDF8" fill-opacity="0.8"/>
+  </g>
+
+  <!-- Video Play Symbol (Glowing Glass Nexus) -->
+  <polygon points="460,460 640,565 460,670" fill="#00F0FF" filter="url(#core-glow)" opacity="0.95"/>
+  <polygon points="460,460 640,565 460,670" fill="#FFFFFF" opacity="0.3"/>
+  
+  <!-- Subtle Internal Highlight accents -->
+  <circle cx="512" cy="512" r="320" stroke="#00F0FF" stroke-width="1.5" stroke-opacity="0.15" stroke-dasharray="10 20"/>
+</svg>
+
